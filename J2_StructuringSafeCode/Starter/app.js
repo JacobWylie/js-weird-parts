@@ -1,3 +1,6 @@
 const g = G$('jon', 'doe');
 
-console.log(g)
+g.greet().setLang('es').greet(true);
+
+
+
