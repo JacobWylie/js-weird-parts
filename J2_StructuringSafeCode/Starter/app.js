@@ -1,6 +1,9 @@
 const g = G$('jon', 'doe');
+const greeting = $('#greeting');
 
-g.greet().setLang('es').greet(true);
+greeting.
+
+
 
 
 

@@ -1,16 +1,20 @@
 (function (global, $) {
 
+	// 'new' an object
 	const Greetr = function(firstName, lastName, language) {
 		return new Greetr.init(firstName, lastName, language);
 	}
 
+	// Hidden within the score of the IIFE and never directly accessible
 	const supportedLangs = ['en', 'es'];
 
+	// Informal greetings
 	const greetings = {
 		en: 'Hello',
 		es: 'Hola'
 	};
 
+	// Formal greetings
 	const formalGreetings = {
 		en: 'Greetings',
 		es: 'Saludos'
@@ -72,6 +76,27 @@
 			this.language = lang;
 
 			this.validate();
+
+			return this;
+		},
+
+		HTMLGreeting: function(selector, formal) {
+			if(!$) {
+				throw 'jQuery not loaded';
+			}
+
+			if(!selector) {
+				throw 'Missing jQuery selector';
+			}
+
+			let msg;
+			if(formal) {
+				msg = this.formalGreeting();
+			} else {
+				msg = this.greeting();
+			}
+
+			$(selector).html(msg);
 
 			return this;
 		}
