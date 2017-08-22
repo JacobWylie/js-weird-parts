@@ -1,4 +1,4 @@
-(function (global, $) {
+;(function (global, $) {
 
 	// 'new' an object
 	const Greetr = function(firstName, lastName, language) {
